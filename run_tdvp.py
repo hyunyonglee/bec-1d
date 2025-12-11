@@ -94,7 +94,6 @@ if __name__ == "__main__":
     parser.add_argument("--Ntot", default='10', help="Total time steps")
     parser.add_argument("--Mstep", default='5', help="Measurement time step")
     parser.add_argument("--dt", default='0.1', help="Delta time")
-    parser.add_argument("--init_state", default='2', help="Initial state")
     parser.add_argument("--path", default=current_directory, help="path for saving data")
     parser.add_argument("--bc", default='open', help="Boundary condition: open or periodic")
     args=parser.parse_args()
@@ -107,7 +106,6 @@ if __name__ == "__main__":
     Ntot = int(args.Ntot)
     Mstep = int(args.Mstep)
     dt = float(args.dt)
-    init_state = args.init_state
     path = args.path
     
     model_params = {
