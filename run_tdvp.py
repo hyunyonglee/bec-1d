@@ -129,7 +129,7 @@ if __name__ == "__main__":
 
     print("Loading wavefunction from file...")
     # file_path = "/Users/hyunyong-lee/Dropbox/Programs/TENSOR_NETWORK/TENPY/BEC_1D/L%d_init_psi.h5" % int(L)
-    file_path = "/home/hylee/bec-1d/L%d_Ncut_%d_init_psi.h5" % (int(L), int(Ncut))
+    file_path = "/home/hylee/bec-1d/L_%d_Ncut_%d_init_psi.h5" % (int(L), int(Ncut))
     with h5py.File(file_path, 'r') as f:
         data = hdf5_io.load_from_hdf5(f)
         psi = data["psi"]
