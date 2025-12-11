@@ -84,6 +84,7 @@ if __name__ == "__main__":
     parser.add_argument("--path", default=current_directory, help="path for saving data")
     parser.add_argument("--RM", default=None, help="path for saving data")
     parser.add_argument("--max_sweep", default='50', help="Maximum number of sweeps")
+    parser.add_argument("--bc", default='open', help="Boundary condition: open or periodic")
     args=parser.parse_args()
 
     L = int(args.L)
@@ -100,7 +101,8 @@ if __name__ == "__main__":
     "L": L, 
     "t": t,
     "U": U,
-    "Ncut": Ncut
+    "Ncut": Ncut,
+    "bc": args.bc
     }
 
     BHM = model.BOSE_HUBBARD(model_params)

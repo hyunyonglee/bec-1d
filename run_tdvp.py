@@ -96,6 +96,7 @@ if __name__ == "__main__":
     parser.add_argument("--dt", default='0.1', help="Delta time")
     parser.add_argument("--init_state", default='2', help="Initial state")
     parser.add_argument("--path", default=current_directory, help="path for saving data")
+    parser.add_argument("--bc", default='open', help="Boundary condition: open or periodic")
     args=parser.parse_args()
 
     L = int(args.L)
@@ -113,7 +114,8 @@ if __name__ == "__main__":
     "L": L, 
     "t": t,
     "U": U,
-    "Ncut": Ncut
+    "Ncut": Ncut,
+    "bc": args.bc
     }
 
     tdvp_params = {

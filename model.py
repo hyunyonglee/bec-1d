@@ -18,12 +18,13 @@ class BOSE_HUBBARD(CouplingModel,MPOModel):
         t = model_params.get('t', 0.)
         U = model_params.get('U', 0.)
         Ncut = model_params.get('Ncut', 2)
+        bc = model_params.get('bc', 'open')
         
         site = BosonSite( Nmax=Ncut, conserve='N', filling=0.0 )
         site.multiply_operators(['B','B'])
         site.multiply_operators(['Bd','Bd'])
 
-        lat = Chain( L=L, site=site, bc='open', bc_MPS='finite', order='default' )
+        lat = Chain( L=L, site=site, bc=bc, bc_MPS='finite', order='default' )
         CouplingModel.__init__(self, lat)
 
         # 2-site hopping
